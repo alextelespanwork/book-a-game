@@ -2,21 +2,17 @@ import { Pipe, PipeTransform, Injectable} from '@angular/core';
 
 @Pipe({
     name: 'search',
-    pure: false
+    pure: false,
 })
 @Injectable()
 export class SearchPipe implements PipeTransform {
-    transform(names: any[], name: any, caseInsensitive: boolean): any {
-        if (name !== undefined) {
-            // filter users, users which match and return true will be kept, false will be filtered out
-            return names.filter((pitch) => {
-                if (caseInsensitive) {
-                    return (pitch.name.toLowerCase().indexOf(name.toLowerCase()) !== -1);
-                } else {
-                    return (pitch.name.indexOf(name) !== -1);
-                }
-            });
+
+    transform(items: any[], filter: Object): any {
+        if (!items || !filter) {
+            return items;
         }
-        return names;
-    }
+        // filter items array, items which match and return true will be kept, false will be filtered out
+        return items.filter(item => item.name.toLowerCase().includes(filter));
+        //item.name.indexOf(filter) !== -1);
+    }    
 }

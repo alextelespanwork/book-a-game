@@ -3,9 +3,9 @@
     <div class="col-md-4">
         <ba-card title="Search for a Pitch" class="football-pitches">          
           <div *ngIf="pitches">
-            <input #searchBox id="search-box" (keyup)="search(searchBox.value)" placeholder="Search for pitch name"/>
+            <input #searchBox id="search-box" [(ngModel)]="searchInput" placeholder="Search for pitch name"/>
             <button class="btn btn-default"
-                    *ngFor="let pitch of pitches"
+                    *ngFor="let pitch of pitches | search:searchInput"
                     (click)="selectPitch(pitch)"
                     [class.active]="pitch === activePitch">
                     <div>{{pitch.name}}</div> 
