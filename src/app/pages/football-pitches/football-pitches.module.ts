@@ -5,7 +5,7 @@ import { NgaModule } from '../../theme/nga.module';
 
 import { FootballPitchesComponent } from './football-pitches.component';
 import { routing } from './football-pitches.routing';
-import { SearchPipe } from './search.pipe';
+import { NameSearchPipe } from './name-search.pipe';
 
 @NgModule({
   imports: [
@@ -17,7 +17,7 @@ import { SearchPipe } from './search.pipe';
   ],
   declarations: [
     FootballPitchesComponent,
-    SearchPipe,
+    NameSearchPipe,
   ],
   bootstrap: [ 
      FootballPitchesComponent, 

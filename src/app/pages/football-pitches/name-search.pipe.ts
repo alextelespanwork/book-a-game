@@ -1,11 +1,11 @@
 import { Pipe, PipeTransform, Injectable} from '@angular/core';
 
 @Pipe({
-    name: 'search',
+    name: 'name-search',
     pure: false,
 })
 @Injectable()
-export class SearchPipe implements PipeTransform {
+export class NameSearchPipe implements PipeTransform {
 
     transform(items: any[], filter: Object): any {
         if (!items || !filter) {

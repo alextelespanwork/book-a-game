@@ -5,7 +5,7 @@
           <div *ngIf="pitches">
             <input #searchBox id="search-box" [(ngModel)]="searchInput" placeholder="Search for pitch name"/>
             <button class="btn btn-default" style="width: 100%;white-space: normal;"
-                    *ngFor="let pitch of pitches | search:searchInput"
+                    *ngFor="let pitch of pitches | name-search:searchInput"
                     (click)="selectPitch(pitch)"
                     [class.active]="pitch === activePitch">                    
                     <div>{{pitch.name}}</div> 
