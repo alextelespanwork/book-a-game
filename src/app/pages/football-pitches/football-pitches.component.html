@@ -1,13 +1,13 @@
 <div class="widgets">
   <div class="row">
-    <div class="col-md-4">
+    <div class="col-sm-4">
         <ba-card title="Search for a Pitch" class="football-pitches">          
           <div *ngIf="pitches">
             <input #searchBox id="search-box" [(ngModel)]="searchInput" placeholder="Search for pitch name"/>
-            <button class="btn btn-default"
+            <button class="btn btn-default" style="width: 100%;white-space: normal;"
                     *ngFor="let pitch of pitches | search:searchInput"
                     (click)="selectPitch(pitch)"
-                    [class.active]="pitch === activePitch">
+                    [class.active]="pitch === activePitch">                    
                     <div>{{pitch.name}}</div> 
             </button>
             <br>
