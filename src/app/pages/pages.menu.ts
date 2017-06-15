@@ -1,20 +1,7 @@
 export const PAGES_MENU = [
   {
     path: 'pages',
-    children: [
-      {
-        path: 'football-pitches',  // path for our page
-        data: { // custom menu declaration
-          menu: {
-            title: 'Football Pitches', // menu title
-            icon: 'ion-android-home', // menu icon
-            pathMatch: 'prefix', // use it if item children not displayed in menu
-            selected: false,
-            expanded: false,
-            order: 0
-          }
-        }
-      },
+    children: [            
       {
         path: 'dashboard',
         data: {
