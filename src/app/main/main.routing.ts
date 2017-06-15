@@ -18,6 +18,7 @@ export const routes: Routes = [
       { path: '', redirectTo: 'welcome', pathMatch: 'full' },
       { path: 'welcome', loadChildren: './welcome/welcome.module#WelcomeModule' },
       { path: 'football-pitches', loadChildren: './football-pitches/football-pitches.module#FootballPitchesModule' },
+      { path: 'add-football-pitch', loadChildren: './add-football-pitch/add-football-pitch.module#AddFootballPitchModule' },
     ]
   }
 ];
