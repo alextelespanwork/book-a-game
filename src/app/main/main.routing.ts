@@ -1,9 +1,6 @@
 import { Routes, RouterModule }  from '@angular/router';
 import { Main } from './main.component';
 import { ModuleWithProviders } from '@angular/core';
-// noinspection TypeScriptValidateTypes
-
-// export function loadChildren(path) { return System.import(path); };
 
 export const routes: Routes = [
   {
@@ -18,7 +15,8 @@ export const routes: Routes = [
     path: '',
     component: Main,
     children: [
-      { path: '', redirectTo: 'football-pitches', pathMatch: 'full' },
+      { path: '', redirectTo: 'welcome', pathMatch: 'full' },
+      { path: 'welcome', loadChildren: './welcome/welcome.module#WelcomeModule' },
       { path: 'football-pitches', loadChildren: './football-pitches/football-pitches.module#FootballPitchesModule' },
     ]
   }

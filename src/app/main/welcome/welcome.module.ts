@@ -3,9 +3,8 @@ import { CommonModule }     from '@angular/common';
 import { FormsModule }      from '@angular/forms';
 import { NgaModule } from '../../theme/nga.module';
 
-import { FootballPitchesComponent } from './football-pitches.component';
-import { routing } from './football-pitches.routing';
-import { NameSearchPipe } from './name-search.pipe';
+import { WelcomeComponent } from './welcome.component';
+import { routing } from './welcome.routing';
 
 import { MainService } from '../services/main.service';
 
@@ -18,14 +17,13 @@ import { MainService } from '../services/main.service';
 
   ],
   declarations: [
-    FootballPitchesComponent,
-    NameSearchPipe,
+    WelcomeComponent,
   ],
   bootstrap: [ 
-     FootballPitchesComponent, 
+     WelcomeComponent, 
   ],
   providers: [
     MainService,
   ],
 })
-export class FootballPitchesModule {}
+export class WelcomeModule {}

@@ -6,7 +6,7 @@
             <input #searchBox id="search-box" [(ngModel)]="searchInput" placeholder="Search for pitch name"/>
             <button class="btn btn-default" style="width: 100%;white-space: normal;"
                     *ngFor="let pitch of pitches | namesearch:searchInput"
-                    (click)="selectPitch(pitch)"
+                    (click)="showMapForPitch(pitch)"
                     [class.active]="pitch === activePitch">                    
                     <div>{{pitch.name}}</div> 
             </button>
@@ -15,9 +15,9 @@
         </ba-card>     
     </div>
     <div class="col-sm-8">
-      <div *ngIf="activePitch">
+      <div *ngIf="activePitch">        
         <ba-card title="Pitch Address" class="football-pitches">
-          <h3>Address: <span class="label label-default">{{activePitch.address}}</span></h3>          
+          <h3>Address: <span class="badge badge-default">{{activePitch.address}}</span></h3>          
 
           <div>
             <button class="btn btn-primary" (click)="bookgame(activePitch)">
