@@ -1,78 +1,54 @@
 
-    <div class="col-md-8">
-        <div>
-            <ba-card title="Add a new pitch" baCardClass="with-scroll">
-                <form class="form-horizontal" #form="ngForm" (ngSubmit)="addPitch()">                    
-                    <!--Name-->
-                    <div class="form-group row">
-                        <label for="inputName1" class="col-sm-2 form-control-label">Pitch Name</label>
-                        <div class="col-sm-10" [ngClass]="{'has-error':name.invalid && name.touched}">
-                            <input type="text" class="form-control" id="inputName1" name="name" [(ngModel)]="inputName" #name="ngModel"
-                                placeholder="Pitch Name" required>
-                            <span class="help-block" *ngIf="name.invalid && name.touched">Pitch Name is required.</span>
-                        </div>
+<div class="col-sm-8">
+    <div>
+        <ba-card title="Add a new pitch" baCardClass="with-scroll">
+            <form class="form-horizontal" #form="ngForm" (ngSubmit)="addPitch()">                    
+                <!--Name-->
+                <div class="form-group row">
+                    <label for="inputName1" class="col-sm-2 form-control-label">Pitch Name</label>
+                    <div class="col-sm-10" [ngClass]="{'has-error':name.invalid && name.touched}">
+                        <input type="text" class="form-control" id="inputName1" name="name" [(ngModel)]="inputName" #name="ngModel"
+                            placeholder="Pitch Name" required>
+                        <span class="help-block" *ngIf="name.invalid && name.touched">Pitch Name is required.</span>
                     </div>
-                    <!--Address-->
-                    <div class="form-group row">
-                        <label for="inputAddress1" class="col-sm-2 form-control-label">Address</label>
-                        <div class="col-sm-10" [ngClass]="{'has-error':address.invalid && address.touched}">
-                            <input type="text" class="form-control" id="inputAddress1" name="address" [(ngModel)]="inputAddress" 
-                                #address="ngModel" placeholder="Address" required>
-                            <span class="help-block" *ngIf="address.invalid && address.touched">Address is required.</span>                     
-                        </div>
+                </div>
+                <!--Address-->
+                <div class="form-group row">
+                    <label for="inputAddress1" class="col-sm-2 form-control-label">Address</label>
+                    <div class="col-sm-10" [ngClass]="{'has-error':address.invalid && address.touched}">
+                        <input type="text" class="form-control" id="inputAddress1" name="address" [(ngModel)]="inputAddress" 
+                            #address="ngModel" placeholder="Address" required>
+                        <span class="help-block" *ngIf="address.invalid && address.touched">Address is required.</span>                     
                     </div>
-                    <!--Pitch Type-->
-                    <div class="form-group row">
-                        <label for="inputPitchType1" class="col-sm-2 form-control-label">Pitch Type</label>
-                        <div class="col-sm-10" [ngClass]="{'has-error':pitchType.invalid && pitchType.touched}">
+                </div>
+                <!--Pitch Type-->
+                <div class="form-group row">
+                    <label for="inputPitchType1" class="col-sm-2 form-control-label">Pitch Type</label>
+                    <div class="col-sm-10 row">
+                        <div class="col-sm-11" [ngClass]="{'has-error':pitchType.invalid && pitchType.touched}">
                             <select class="form-control" id="inputPitchType1" name="pitchType" [(ngModel)]="inputPitchType" #pitchType="ngModel"
                                     placeholder="Pitch Type" required >
                                 <option *ngFor="let pitchType of pitchTypes">{{pitchType}}</option>
                             </select>
-                            <span class="help-block" *ngIf="pitchType.invalid && pitchType.touched">Address is required.</span>  
-                        </div>                
-                    </div>
-                    <!--Add Button-->            
-                    <div class="form-group row">
-                        <div class="offset-sm-2 col-sm-10">
-                        <button class="btn btn-warning">Add Pitch</button>
+                            <span class="help-block" *ngIf="pitchType.invalid && pitchType.touched">Address is required.</span>                              
                         </div>
+                        <div class="col-sm-1">
+                            <button class="btn btn-default" (click)="addForm()"><span class=ion-plus-round></span></button> 
+                        </div>  
+                    </div>                                 
+                </div>
+                <!--Add Button-->            
+                <div class="form-group row">
+                    <div class="offset-sm-2 col-sm-10">
+                    <button class="btn btn-primary">Add Pitch</button>
                     </div>
-                </form>
+                </div>
+            </form>
 
-            </ba-card>
-        </div>
+        </ba-card>
     </div>
+</div>
 
-<div class="col-md-12">
-    <ba-card title="Pitch Layout" baCardClass="with-scroll">
-        <!--<div class="form-control form-control-rounded" style="width:100%; height:200px; border:2px solid #384f49;background-color:#44635c">                
-        </div>-->
-
-        <div class="surface">
-            <div class="pitch">
-
-                <div class="half">
-
-                    <div class="penalty">
-                        <div class="goal"></div>
-                        <div class="center"></div>
-                    </div><!-- penalty -->
-
-                </div><!-- half -->
-
-                <div class="half">
-
-                    <div class="penalty">
-                        <div class="goal"></div>
-                        <div class="center"></div>
-                    </div><!-- penalty -->
-
-                </div><!-- half -->
-
-                <div class="center"></div>
-
-            </div><!-- pitch -->
-        </div><!-- surface -->
-    </ba-card>
+<div class="col-sm-12">
+    <football-pitch-layout></football-pitch-layout>
 </div>

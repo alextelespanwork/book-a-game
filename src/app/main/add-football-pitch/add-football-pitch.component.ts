@@ -18,7 +18,6 @@ export class AddFootballPitchComponent implements OnInit {
                       'Nine a Side',
                       'Ten a Side',
                       'Eleven a Side',
-                      'Twelve a Side',
                     ];
   }
 
