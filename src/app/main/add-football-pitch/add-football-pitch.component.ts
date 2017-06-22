@@ -10,7 +10,7 @@ export class AddFootballPitchComponent implements OnInit {
   pitchTypes: {id: number, type: String}[];
   inputName: String = new String();
   inputAddress: String = new String();
-  inputTypePitch: String = new String();
+  inputTypePitch: {id: number, type: String};
   
   ngOnInit(): void {
    this.pitchTypes = [{ id: 5, type: 'Five a Side' },
@@ -20,6 +20,8 @@ export class AddFootballPitchComponent implements OnInit {
                       { id: 9, type: 'Nine a Side' },
                       { id: 10, type: 'Ten a Side' },
                       { id: 11, type: 'Eleven a Side' }];
+
+  this.inputTypePitch = this.pitchTypes[5];
   }
 
   addPitch() {    

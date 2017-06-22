@@ -7,7 +7,7 @@ import { Component, Input } from '@angular/core';
 })
 export class FootballPitchLayoutComponent {
 @Input() pitchType: {id: number, type: String};
-p: String = this.pitchType.type;
+
 
 
 fiveASide: String[] =   ['b-lgoalkeeper', 'b-ldefender2', 'b-ldefender3', 'b-lmidfielder2', 'b-lforward2'];
@@ -26,9 +26,9 @@ elevenASide: String[] = ['b-lgoalkeeper', 'b-ldefender1', 'b-ldefender2', 'b-lde
                          'b-lforward3'];
 
 makeVisible(butId) {  
-  if (this.pitchType.id === 5) {
+  //if (this.pitchType.id === 5) {
 
-  }
+  //}
 }
 
 //initialize the screen depending on the pitchType
@@ -36,7 +36,7 @@ makeVisible(butId) {
   onClick(event) {
     console.log(event);
       console.log(event.srcElement.className);
-      console.log(event.srcElement.firstChild.className);
+      //console.log(event.srcElement.firstChild.className);
 
 
     if (event.srcElement.className.includes('btn-default')) {
@@ -45,10 +45,12 @@ makeVisible(butId) {
     } else if (event.srcElement.className.includes('btn-warning')) {
       event.srcElement.className = 'btn btn-default';
       event.srcElement.firstChild.className = 'ion-plus-round';      
+    } else if (event.srcElement.className.includes('ion-close-round')) {
+      event.srcElement.className = 'ion-plus-round';
+      event.srcElement.parentElement.className = 'btn btn-default';        
+    } else if (event.srcElement.className.includes('ion-plus-round')) {
+      event.srcElement.className = 'ion-close-round';      
+      event.srcElement.parentElement.className = 'btn btn-warning';
     }
-    //console.log(event.srcElement.attributes.id);
-    //var idAttr = event.srcElement.attributes.id;
-    //var value = idAttr.nodeValue;
-    //console.log(value);
   }
 }
