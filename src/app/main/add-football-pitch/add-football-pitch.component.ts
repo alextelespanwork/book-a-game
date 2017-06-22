@@ -6,25 +6,26 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./add-football-pitch.component.scss'],
 })
 export class AddFootballPitchComponent implements OnInit {
-  pitchTypes: String[];
+
+  pitchTypes: {id: number, type: String}[];
   inputName: String = new String();
   inputAddress: String = new String();
   inputTypePitch: String = new String();
-   ngOnInit(): void {
-   this.pitchTypes = ['Five a Side',
-                      'Six a Side',
-                      'Seven a Side',
-                      'Eight a Side',
-                      'Nine a Side',
-                      'Ten a Side',
-                      'Eleven a Side',
-                    ];
+  
+  ngOnInit(): void {
+   this.pitchTypes = [{ id: 5, type: 'Five a Side' },
+                      { id: 6, type: 'Six a Side' },
+                      { id: 7, type: 'Seven a Side' },
+                      { id: 8, type: 'Eight a Side' },
+                      { id: 9, type: 'Nine a Side' },
+                      { id: 10, type: 'Ten a Side' },
+                      { id: 11, type: 'Eleven a Side' }];
   }
 
   addPitch() {    
-    console.log(this.inputName);
-    console.log(this.inputAddress);
-    console.log(this.inputTypePitch);
+     //console.log(this.inputName);
+    // console.log(this.inputAddress);
+    // console.log(this.inputTypePitch);
     
   }
 

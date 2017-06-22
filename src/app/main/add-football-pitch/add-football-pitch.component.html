@@ -28,7 +28,7 @@
                         <div class="col-sm-11" [ngClass]="{'has-error':pitchType.invalid && pitchType.touched}">
                             <select class="form-control" id="inputPitchType1" name="pitchType" [(ngModel)]="inputPitchType" #pitchType="ngModel"
                                     placeholder="Pitch Type" required >
-                                <option *ngFor="let pitchType of pitchTypes">{{pitchType}}</option>
+                                <option *ngFor="let pitchType of pitchTypes">{{pitchType.type}}</option>
                             </select>
                             <span class="help-block" *ngIf="pitchType.invalid && pitchType.touched">Address is required.</span>                              
                         </div>
@@ -50,5 +50,5 @@
 </div>
 
 <div class="col-sm-12">
-    <football-pitch-layout></football-pitch-layout>
+    <football-pitch-layout [pitchType]="inputPitchType"></football-pitch-layout>
 </div>
