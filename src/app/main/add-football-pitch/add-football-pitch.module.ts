@@ -1,6 +1,8 @@
 import { NgModule }         from '@angular/core';
 import { CommonModule }     from '@angular/common';
 import { FormsModule }      from '@angular/forms';
+import { BrowserModule } from '@angular/platform-browser';
+
 import { NgaModule } from '../../theme/nga.module';
 
 import { AddFootballPitchComponent } from './add-football-pitch.component';
@@ -15,7 +17,7 @@ import { MainService } from '../services/main.service';
     FormsModule,
     routing,
     NgaModule,
-
+    BrowserModule,
   ],
   declarations: [
     AddFootballPitchComponent,

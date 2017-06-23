@@ -28,7 +28,7 @@ export class AddFootballPitchComponent implements OnInit {
      //console.log(this.inputName);
     // console.log(this.inputAddress);
     // console.log(this.inputTypePitch);
-    
+    //https://scotch.io/tutorials/how-to-deal-with-different-form-controls-in-angular-2
   }
 
 }
