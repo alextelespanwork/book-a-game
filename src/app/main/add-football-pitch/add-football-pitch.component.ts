@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FootballPitchLayoutComponent } from '../football-pitch-layout/football-pitch-layout.component';
 
 @Component({
   selector: 'add-football-pitch',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./add-football-pitch.component.scss'],
 })
 export class AddFootballPitchComponent implements OnInit {
+
+  constructor(private footballPitch: FootballPitchLayoutComponent) {}
 
   pitchTypes: {id: number, type: String}[];
   inputName: String = new String();
@@ -21,8 +24,13 @@ export class AddFootballPitchComponent implements OnInit {
                       { id: 10, type: 'Ten a Side' },
                       { id: 11, type: 'Eleven a Side' }];
 
-  this.inputTypePitch = this.pitchTypes[5];
+  this.inputTypePitch = this.pitchTypes[0];
   }
+
+  pitchTypeChanged(): void {
+    this.footballPitch.setPitchButtonsVisibility(this.inputTypePitch.type);
+  }
+
 
   addPitch() {    
      //console.log(this.inputName);

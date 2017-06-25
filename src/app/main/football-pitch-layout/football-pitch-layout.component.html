@@ -13,20 +13,30 @@
                 </div><!-- penalty -->
                 <div class="row">
                     <div class="col-sm-4">
-                        <button id="b-ldefender1" (click)="onClick($event)" class="btn btn-default" style="top:5%; position:absolute; width:50px; height:50px;"><span class=ion-plus-round></span></button>
-                        <button id="b-ldefender2" (click)="onClick($event)" class="btn btn-default" style="top: calc(35% - 25px); position:absolute; width:50px; height:50px;"><span class=ion-plus-round></span></button>
-                        <button id="b-ldefender3" (click)="onClick($event)" class="btn btn-default" style="top: calc(65% - 25px); position:absolute; width:50px; height:50px;"><span class=ion-plus-round></span></button>
-                        <button id="b-ldefender4" (click)="onClick($event)" class="btn btn-default" style="top: calc(95% - 50px); position:absolute; width:50px; height:50px;"><span class=ion-plus-round></span></button>
+                        <button id="b-ldefender1" (click)="onClick($event)" *ngIf="eightASide || nineASide || tenASide || elevenASide"
+                            class="btn btn-default" style="top:5%; position:absolute; width:50px; height:50px;"><span class=ion-plus-round></span></button>
+                        <button id="b-ldefender2" (click)="onClick($event)" *ngIf="fiveASide || sixASide || sevenASide || eightASide || nineASide || tenASide || elevenASide"
+                            class="btn btn-default" style="top: calc(35% - 25px); position:absolute; width:50px; height:50px;"><span class=ion-plus-round></span></button>
+                        <button id="b-ldefender3" (click)="onClick($event)" *ngIf="fiveASide || sixASide || sevenASide || eightASide || nineASide || tenASide || elevenASide"
+                            class="btn btn-default" style="top: calc(65% - 25px); position:absolute; width:50px; height:50px;"><span class=ion-plus-round></span></button>
+                        <button id="b-ldefender4" (click)="onClick($event)" *ngIf="eightASide || nineASide || tenASide || elevenASide"
+                            class="btn btn-default" style="top: calc(95% - 50px); position:absolute; width:50px; height:50px;"><span class=ion-plus-round></span></button>
                     </div>
                     <div class="col-sm-4">
-                        <button id="b-lmidfielder1" (click)="onClick($event)" class="btn btn-default" style="top: 15%; z-index: 10; position:relative; width:50px; height:50px;"><span class=ion-plus-round></span></button>
-                        <button id="b-lmidfielder2" (click)="onClick($event)" class="btn btn-default" style="top: 35%; z-index: 10; position:relative; width:50px; height:50px;"><span class=ion-plus-round></span></button>
-                        <button id="b-lmidfielder3" (click)="onClick($event)" class="btn btn-default" style="top: 55%; z-index: 10; position:relative; width:50px; height:50px;"><span class=ion-plus-round></span></button>
+                        <button id="b-lmidfielder1" (click)="onClick($event)" *ngIf="sixASide || sevenASide || eightASide || nineASide || tenASide || elevenASide"
+                            class="btn btn-default" style="top: 15%; z-index: 10; position:relative; width:50px; height:50px;"><span class=ion-plus-round></span></button>
+                        <button id="b-lmidfielder2" (click)="onClick($event)" *ngIf="fiveASide || sevenASide || tenASide || elevenASide"
+                            class="btn btn-default" style="top: 35%; z-index: 10; position:relative; width:50px; height:50px;"><span class=ion-plus-round></span></button>
+                        <button id="b-lmidfielder3" (click)="onClick($event)" *ngIf="sixASide || sevenASide || eightASide || nineASide || tenASide || elevenASide"
+                            class="btn btn-default" style="top: 55%; z-index: 10; position:relative; width:50px; height:50px;"><span class=ion-plus-round></span></button>
                     </div>
                     <div class="col-sm-4">
-                        <button id="b-lforward1" (click)="onClick($event)" class="btn btn-default" style="top: 15%; z-index: 10; position:relative; width:50px; height:50px;"><span class=ion-plus-round></span></button>
-                        <button id="b-lforward2" (click)="onClick($event)" class="btn btn-default" style="top: 35%; z-index: 10; position:relative; width:50px; height:50px;"><span class=ion-plus-round></span></button>
-                        <button id="b-lforward3" (click)="onClick($event)" class="btn btn-default" style="top: 55%; z-index: 10; position:relative; width:50px; height:50px;"><span class=ion-plus-round></span></button>
+                        <button id="b-lforward1" (click)="onClick($event)" *ngIf="nineASide || tenASide || elevenASide"
+                            class="btn btn-default" style="top: 15%; z-index: 10; position:relative; width:50px; height:50px;"><span class=ion-plus-round></span></button>
+                        <button id="b-lforward2" (click)="onClick($event)" *ngIf="fiveASide || sixASide || sevenASide || eightASide || elevenASide"
+                            class="btn btn-default" style="top: 35%; z-index: 10; position:relative; width:50px; height:50px;"><span class=ion-plus-round></span></button>
+                        <button id="b-lforward3" (click)="onClick($event)" *ngIf="nineASide || tenASide || elevenASide"
+                            class="btn btn-default" style="top: 55%; z-index: 10; position:relative; width:50px; height:50px;"><span class=ion-plus-round></span></button>
                     </div>
                 </div><!-- row -->     
             </div><!-- half -->

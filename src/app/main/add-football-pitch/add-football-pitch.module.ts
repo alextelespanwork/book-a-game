@@ -1,7 +1,6 @@
 import { NgModule }         from '@angular/core';
 import { CommonModule }     from '@angular/common';
 import { FormsModule }      from '@angular/forms';
-import { BrowserModule } from '@angular/platform-browser';
 
 import { NgaModule } from '../../theme/nga.module';
 
@@ -17,7 +16,6 @@ import { MainService } from '../services/main.service';
     FormsModule,
     routing,
     NgaModule,
-    BrowserModule,
   ],
   declarations: [
     AddFootballPitchComponent,
@@ -28,6 +26,7 @@ import { MainService } from '../services/main.service';
   ],
   providers: [
     MainService,
+    FootballPitchLayoutComponent,
   ],
 })
 export class AddFootballPitchModule {}

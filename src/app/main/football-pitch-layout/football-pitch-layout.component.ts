@@ -1,37 +1,52 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'football-pitch-layout',
   templateUrl: './football-pitch-layout.component.html',
   styleUrls: ['./football-pitch-layout.component.scss'],
 })
-export class FootballPitchLayoutComponent {
+export class FootballPitchLayoutComponent implements OnInit {
 @Input() pitchType: {id: number, type: String};
 
+pType: String = new String();
+fiveASide: boolean = false;
+sixASide: boolean = false;
+sevenASide: boolean = false;
+eightASide: boolean = false;
+nineASide: boolean = false;
+tenASide: boolean = false;
+elevenASide: boolean = false;
 
+// fiveASide: String[] =   ['b-lgoalkeeper', 'b-ldefender2', 'b-ldefender3', 'b-lmidfielder2', 'b-lforward2'];
+// sixASide: String[] =    ['b-lgoalkeeper', 'b-ldefender2', 'b-ldefender3', 'b-lmidfielder1', 'b-lmidfielder3', 
+//                          'b-lforward2'];
+// sevenASide: String[] =  ['b-lgoalkeeper', 'b-ldefender2', 'b-ldefender3', 'b-lmidfielder1', 'b-lmidfielder2',
+//                          'b-lmidfielder3', 'b-lforward2'];
+// eightASide: String[] =  ['b-lgoalkeeper', 'b-ldefender1', 'b-ldefender2', 'b-ldefender3', 'b-ldefender4', 
+//                          'b-lmidfielder1', 'b-lmidfielder3', 'b-lforward2'];
+// nineASide: String[] =   ['b-lgoalkeeper', 'b-ldefender1', 'b-ldefender2', 'b-ldefender3', 'b-ldefender4', 
+//                          'b-lmidfielder1', 'b-lmidfielder3', 'b-lforward1', 'b-lforward3'];
+// tenASide: String[] =    ['b-lgoalkeeper', 'b-ldefender1', 'b-ldefender2', 'b-ldefender3', 'b-ldefender4', 
+//                          'b-lmidfielder1', 'b-lmidfielder2', 'b-lmidfielder3', 'b-lforward1', 'b-lforward3'];
+// elevenASide: String[] = ['b-lgoalkeeper', 'b-ldefender1', 'b-ldefender2', 'b-ldefender3', 'b-ldefender4', 
+//                          'b-lmidfielder1', 'b-lmidfielder2', 'b-lmidfielder3', 'b-lforward1', 'b-lforward2', 
+//                          'b-lforward3'];
 
-fiveASide: String[] =   ['b-lgoalkeeper', 'b-ldefender2', 'b-ldefender3', 'b-lmidfielder2', 'b-lforward2'];
-sixASide: String[] =    ['b-lgoalkeeper', 'b-ldefender2', 'b-ldefender3', 'b-lmidfielder1', 'b-lmidfielder3', 
-                         'b-lforward2'];
-sevenASide: String[] =  ['b-lgoalkeeper', 'b-ldefender2', 'b-ldefender3', 'b-lmidfielder1', 'b-lmidfielder2',
-                         'b-lmidfielder3', 'b-lforward2'];
-eightASide: String[] =  ['b-lgoalkeeper', 'b-ldefender1', 'b-ldefender2', 'b-ldefender3', 'b-ldefender4', 
-                         'b-lmidfielder1', 'b-lmidfielder3', 'b-lforward2'];
-nineASide: String[] =   ['b-lgoalkeeper', 'b-ldefender1', 'b-ldefender2', 'b-ldefender3', 'b-ldefender4', 
-                         'b-lmidfielder1', 'b-lmidfielder3', 'b-lforward1', 'b-lforward3'];
-tenASide: String[] =    ['b-lgoalkeeper', 'b-ldefender1', 'b-ldefender2', 'b-ldefender3', 'b-ldefender4', 
-                         'b-lmidfielder1', 'b-lmidfielder2', 'b-lmidfielder3', 'b-lforward1', 'b-lforward3'];
-elevenASide: String[] = ['b-lgoalkeeper', 'b-ldefender1', 'b-ldefender2', 'b-ldefender3', 'b-ldefender4', 
-                         'b-lmidfielder1', 'b-lmidfielder2', 'b-lmidfielder3', 'b-lforward1', 'b-lforward2', 
-                         'b-lforward3'];
+setPitchButtonsVisibility( p: String ): void {
+  if (p === 'Five a Side') { this.fiveASide = true; }
+  else if (p === 'Six a Side') { this.sixASide = true; }
+  else if (p === 'Seven a Side') { this.sevenASide = true; }
+  else if (p === 'Eight a Side') { this.eightASide = true; }
+  else if (p === 'Nine a Side') { this.nineASide = true; }
+  else if (p === 'Ten a Side') { this.tenASide = true; }
+  else if (p === 'Eleven a Side') { this.elevenASide = true; } 
 
-makeVisible(butId) {  
-  //if (this.pitchType.id === 5) {
-
-  //}
 }
 
-//initialize the screen depending on the pitchType
+ ngOnInit(): void {
+  this.pType = this.pitchType.type;
+  this.setPitchButtonsVisibility(this.pType);
+ }
 
   onClick(event) {
     console.log(event);
