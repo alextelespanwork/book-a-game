@@ -1,14 +1,14 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, AfterViewChecked } from '@angular/core';
 
 @Component({
   selector: 'football-pitch-layout',
   templateUrl: './football-pitch-layout.component.html',
   styleUrls: ['./football-pitch-layout.component.scss'],
 })
-export class FootballPitchLayoutComponent implements OnInit {
-@Input() pitchType: {id: number, type: String};
+export class FootballPitchLayoutComponent implements AfterViewChecked {
+@Input() pitchType: String;
 
-pType: String = new String();
+//pType: String = new String();
 fiveASide: boolean = false;
 sixASide: boolean = false;
 sevenASide: boolean = false;
@@ -16,6 +16,12 @@ eightASide: boolean = false;
 nineASide: boolean = false;
 tenASide: boolean = false;
 elevenASide: boolean = false;
+
+ngAfterViewChecked()	
+{
+  console.log(this.pitchType);
+  this.setPitchButtonsVisibility(this.pitchType);
+}
 
 // fiveASide: String[] =   ['b-lgoalkeeper', 'b-ldefender2', 'b-ldefender3', 'b-lmidfielder2', 'b-lforward2'];
 // sixASide: String[] =    ['b-lgoalkeeper', 'b-ldefender2', 'b-ldefender3', 'b-lmidfielder1', 'b-lmidfielder3', 
@@ -43,17 +49,19 @@ setPitchButtonsVisibility( p: String ): void {
 
 }
 
- ngOnInit(): void {
-  this.pType = this.pitchType.type;
-  this.setPitchButtonsVisibility(this.pType);
- }
+ //ngAfterViewInit(): void {
+  //this.pType = this.pitchType;  
+  // console.log(this.pitchType == null);
+  // console.log(this.pitchType.length == null);
+  // if (this.pitchType.length != null) {
+  //   this.setPitchButtonsVisibility(this.pitchType);
+  // }
+ //}
 
   onClick(event) {
-    console.log(event);
-      console.log(event.srcElement.className);
-      //console.log(event.srcElement.firstChild.className);
-
-
+    //console.log(event);
+    //console.log(event.srcElement.className);
+    //console.log(event.srcElement.firstChild.className);
     if (event.srcElement.className.includes('btn-default')) {
       event.srcElement.className = 'btn btn-warning';
       event.srcElement.firstChild.className = 'ion-close-round';          
