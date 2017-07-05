@@ -9,6 +9,7 @@ import 'rxjs/add/operator/map';
 // Pitch
 import { Pitch } from '../shared/models/pitch';
 import { PITCHES } from './pitches';
+import { PTYPES } from './pitch-types';
 
 @Injectable()
 
@@ -18,6 +19,10 @@ export class MainService {
 
   getPitches(): Promise<Pitch[]> {
     return Promise.resolve(PITCHES);
+  }
+
+  getTypesForPitch(): Promise<String[]> {
+    return Promise.resolve(PTYPES);
   }
 
 //   getPitches(term: string): Observable<Pitch[]> {

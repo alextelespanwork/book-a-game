@@ -1,0 +1,37 @@
+<div class="col-sm-8">
+    <div>
+        <ba-card title="Create Game" baCardClass="with-scroll">
+            <form class="form-horizontal" #form="ngForm" (ngSubmit)="addPitch()">                    
+                <!--Pitch Name-->
+                <div class="form-group row">
+                    <label for="inputPitchName1" class="col-sm-2 form-control-label">Pitch Name</label>
+                    <div [ngClass]="{'has-error':pitchName.invalid && pitchName.touched}">
+                        <select class="form-control" id="inputPitchName1" name="pitchName" [ngModel]="inputPitch" (ngModelChange)="pitchNameChanged($event)" #pitchName="ngModel" 
+                                placeholder="Pitch Name" required >
+                            <option *ngFor="let pitch of pitches" [ngValue]="pitch">{{pitch.name}}</option>
+                        </select>
+                        <span class="help-block" *ngIf="pitchName.invalid && pitchName.touched">Pitch Name is required.</span>                              
+                    </div>                                                    
+                </div>
+                <!--Pitch Type-->
+                <div class="form-group row">
+                    <label for="inputPitchType1" class="col-sm-2 form-control-label">Pitch Type</label>
+                    <div [ngClass]="{'has-error':pitchType.invalid && pitchType.touched}">
+                        <select class="form-control" id="inputPitchType1" name="pitchType" [ngModel]="inputType" #pitchType="ngModel" 
+                                placeholder="Pitch Type" required >
+                            <option *ngFor="let type of types" [ngValue]="type">{{type}}</option>
+                        </select>
+                        <span class="help-block" *ngIf="pitchType.invalid && pitchType.touched">Pitch Type is required.</span>                              
+                    </div>
+                </div>
+                <!--Create Game Button-->            
+                <div class="form-group row">
+                    <div class="offset-sm-2 col-sm-10">
+                    <button class="btn btn-primary">Create Game</button>
+                    </div>
+                </div>
+            </form>
+
+        </ba-card>
+    </div>
+</div>

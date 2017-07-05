@@ -19,6 +19,11 @@ export const routes: Routes = [
       { path: 'welcome', loadChildren: './welcome/welcome.module#WelcomeModule' },
       { path: 'football-pitches', loadChildren: './football-pitches/football-pitches.module#FootballPitchesModule' },
       { path: 'add-football-pitch', loadChildren: './add-football-pitch/add-football-pitch.module#AddFootballPitchModule' },
+      { path: 'create-game', loadChildren: './create-game/create-game.module#CreateGameModule' },
+      { path: 'about', loadChildren: './about/about.module#AboutModule' },  
+      { path: 'contact', loadChildren: './contact/contact.module#ContactModule' },
+      { path: 'login', loadChildren: './login/login.module#LoginModule' },
+      { path: 'register', loadChildren: './register/register.module#RegisterModule' },        
     ]
   }
 ];
