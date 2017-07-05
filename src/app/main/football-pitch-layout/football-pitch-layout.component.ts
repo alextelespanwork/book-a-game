@@ -19,8 +19,8 @@ elevenASide: boolean = false;
 
 ngAfterViewChecked()	
 {
-  console.log(this.pitchType);
-  this.setPitchButtonsVisibility(this.pitchType);
+  //console.log(this.pitchType);
+  //this.setPitchButtonsVisibility(this.pitchType);
 }
 
 // fiveASide: String[] =   ['b-lgoalkeeper', 'b-ldefender2', 'b-ldefender3', 'b-lmidfielder2', 'b-lforward2'];

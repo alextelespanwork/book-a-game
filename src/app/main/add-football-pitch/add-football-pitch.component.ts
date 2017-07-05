@@ -46,6 +46,19 @@ export class AddFootballPitchComponent implements OnInit {
     //console.log(this.inputAddress);
     //console.log(this.inputTypePitch);
     //https://scotch.io/tutorials/how-to-deal-with-different-form-controls-in-angular-2
+
+    console.log(this.inputs);
+  }
+
+  inputs: { value: any}[] = [];
+  
+  addInput() {
+    this.inputs.push({ value: this.pitchTypes[0].type });
+  }
+
+  deleteInput(input) {
+    const p = this.inputs.findIndex(x => x.value === input.value);
+    this.inputs.splice(p, 1);
   }
 
 }
