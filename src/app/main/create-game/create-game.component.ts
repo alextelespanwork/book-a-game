@@ -12,6 +12,7 @@ export class CreateGameComponent implements OnInit {
 pitches: Pitch[];
 inputPitch: Pitch;
 types: String[];
+inputType: String;
 
   constructor(private mainService: MainService) { }
 
@@ -25,6 +26,10 @@ types: String[];
     if (event.name != null) {
       this.mainService.getTypesForPitch().then(types => this.types = types);
     } 
+  }
+
+  addPitch(): void {
+    
   }
 
 
