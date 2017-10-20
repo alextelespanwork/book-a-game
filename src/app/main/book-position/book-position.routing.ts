@@ -1,11 +1,11 @@
 import { Routes, RouterModule } from '@angular/router';
 
-import { CreateGameComponent } from './create-game.component';
+import { BookPositionComponent } from './book-position.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: CreateGameComponent,
+    component: BookPositionComponent,
   }
 ];
 

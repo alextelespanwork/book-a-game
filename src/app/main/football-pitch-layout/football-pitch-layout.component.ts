@@ -1,11 +1,11 @@
-import { Component, Input, AfterViewChecked } from '@angular/core';
+import { Component, Input, OnInit, AfterViewChecked } from '@angular/core';
 
 @Component({
   selector: 'football-pitch-layout',
   templateUrl: './football-pitch-layout.component.html',
   styleUrls: ['./football-pitch-layout.component.scss'],
 })
-export class FootballPitchLayoutComponent implements AfterViewChecked {
+export class FootballPitchLayoutComponent implements OnInit {
 @Input() pitchType: String;
 
 //pType: String = new String();
@@ -17,11 +17,16 @@ nineASide: boolean = false;
 tenASide: boolean = false;
 elevenASide: boolean = false;
 
-ngAfterViewChecked()	
-{
+ngOnInit(): void {      
+  this.pitchType = "Five a Side";
+  this.setPitchButtonsVisibility(this.pitchType);
+}
+
+//ngAfterViewChecked()	
+//{
   //console.log(this.pitchType);
   //this.setPitchButtonsVisibility(this.pitchType);
-}
+//}
 
 // fiveASide: String[] =   ['b-lgoalkeeper', 'b-ldefender2', 'b-ldefender3', 'b-lmidfielder2', 'b-lforward2'];
 // sixASide: String[] =    ['b-lgoalkeeper', 'b-ldefender2', 'b-ldefender3', 'b-lmidfielder1', 'b-lmidfielder3', 
@@ -49,14 +54,6 @@ setPitchButtonsVisibility( p: String ): void {
 
 }
 
- //ngAfterViewInit(): void {
-  //this.pType = this.pitchType;  
-  // console.log(this.pitchType == null);
-  // console.log(this.pitchType.length == null);
-  // if (this.pitchType.length != null) {
-  //   this.setPitchButtonsVisibility(this.pitchType);
-  // }
- //}
 
   onClick(event) {
     //console.log(event);

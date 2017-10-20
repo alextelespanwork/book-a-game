@@ -3,11 +3,11 @@ import { Pitch } from '../shared/models/pitch';
 import { MainService } from '../services/main.service';
 
 @Component({
-  selector: 'create-game',
-  templateUrl: './create-game.component.html',
-  styleUrls: ['./create-game.component.scss'],
+  selector: 'book-pitch',
+  templateUrl: './book-pitch.component.html',
+  styleUrls: ['./book-pitch.component.scss'],
 })
-export class CreateGameComponent implements OnInit {
+export class BookPitchComponent implements OnInit {
 
 pitches: Pitch[];
 inputPitch: Pitch;

@@ -39,10 +39,23 @@ export const MAIN_MENU = [
     }
   },
   {
-    path: 'create-game',  // path for our page
+    path: 'book-pitch',  // path for our page
     data: { // custom menu declaration
       menu: {
-        title: 'Create Game', // menu title
+        title: 'Book Pitch', // menu title
+        icon: 'ion-plus-round', // menu icon
+        pathMatch: 'prefix', // use it if item children not displayed in menu
+        selected: false,
+        expanded: false,
+        order: 0
+      }
+    }
+  },
+  {
+    path: 'book-position',  // path for our page
+    data: { // custom menu declaration
+      menu: {
+        title: 'Book Position', // menu title
         icon: 'ion-plus-round', // menu icon
         pathMatch: 'prefix', // use it if item children not displayed in menu
         selected: false,

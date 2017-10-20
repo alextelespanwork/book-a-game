@@ -4,9 +4,9 @@ import { FormsModule }      from '@angular/forms';
 
 import { NgaModule } from '../../theme/nga.module';
 
-import { CreateGameComponent } from './create-game.component';
+import { BookPositionComponent } from './book-position.component';
 
-import { routing } from './create-game.routing';
+import { routing } from './book-position.routing';
 
 import { MainService } from '../services/main.service';
 
@@ -18,13 +18,13 @@ import { MainService } from '../services/main.service';
     NgaModule,
   ],
   declarations: [
-    CreateGameComponent,
+    BookPositionComponent,
   ],
   bootstrap: [ 
-     CreateGameComponent,      
+    BookPositionComponent,      
   ],
   providers: [
     MainService,
   ],
 })
-export class CreateGameModule {}
+export class BookPositionModule {}
