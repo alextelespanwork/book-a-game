@@ -29,7 +29,7 @@ export const MAIN_MENU = [
     path: 'add-football-pitch',  // path for our page
     data: { // custom menu declaration
       menu: {
-        title: 'Add Football Pitch', // menu title
+        title: 'Add / Edit Pitch', // menu title
         icon: 'ion-android-add-circle', // menu icon
         pathMatch: 'prefix', // use it if item children not displayed in menu
         selected: false,

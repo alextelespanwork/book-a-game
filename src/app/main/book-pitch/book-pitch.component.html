@@ -19,7 +19,7 @@
                     <div [ngClass]="{'has-error':pitchType.invalid && pitchType.touched}">
                         <select class="form-control" id="inputPitchType1" name="pitchType" [ngModel]="inputType" #pitchType="ngModel" 
                                 placeholder="Pitch Type" required >
-                            <option *ngFor="let type of types" [ngValue]="type">{{type}}</option>
+                            <option *ngFor="let type of inputTypes" [ngValue]="type">{{type.type}}</option>
                         </select>
                         <span class="help-block" *ngIf="pitchType.invalid && pitchType.touched">Pitch Type is required.</span>                              
                     </div>
@@ -31,7 +31,6 @@
                     </div>
                 </div>
             </form>
-
         </ba-card>
     </div>
 </div>

@@ -1,6 +1,6 @@
 <div class="col-sm-8">
     <div>
-        <ba-card title="Add a new pitch" baCardClass="with-scroll">
+        <ba-card baCardClass="with-scroll">
             <form class="form-horizontal" #form="ngForm">                    
                 <!--Name-->
                 <div class="form-group row">
@@ -58,15 +58,11 @@
                 <!--Add Button-->            
                 <div class="form-group row">
                     <div class="offset-sm-2 col-sm-10">
-                        <button class="btn btn-primary" (click)="addPitch()">Add Pitch</button>
+                        <button class="btn btn-primary" (click)="addPitch()">Save Pitch</button>
                     </div>
                 </div>
             </form>
 
         </ba-card>
     </div>
-</div>
-
-<div class="col-sm-12">
-    <football-pitch-layout [pitchType]="pitchType"></football-pitch-layout>
 </div>

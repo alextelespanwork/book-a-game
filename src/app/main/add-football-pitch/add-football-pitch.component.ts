@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-// import { FootballPitchLayoutComponent } from '../football-pitch-layout/football-pitch-layout.component';
+
+import { Pitch } from '../shared/models/pitch';
+
+import { MainService } from '../services/main.service';
 
 @Component({
   selector: 'add-football-pitch',
@@ -12,9 +15,10 @@ export class AddFootballPitchComponent implements OnInit {
   inputName: String = new String();
   inputAddress: String = new String();
   inputTypePitch: {id: number, type: String};
-  pitchType: String;
+  pitches: Pitch[];
 
-  constructor() {
+  
+  constructor(private mainService: MainService) {
     this.pitchTypes = [{ id: 5, type: 'Five a Side' },
                       { id: 6, type: 'Six a Side' },
                       { id: 7, type: 'Seven a Side' },
@@ -24,20 +28,20 @@ export class AddFootballPitchComponent implements OnInit {
                       { id: 11, type: 'Eleven a Side' }];      
   }
 
+  getPitches(): void {
+    this.mainService.getPitches().then(pitches => this.pitches = pitches);
+  } 
+
   ngOnInit(): void {      
   this.inputTypePitch = this.pitchTypes[0];
-  
-  this.pitchType = this.inputTypePitch.type;  
+  this.getPitches();
   console.log("----ngOnInit");
-  console.log(this.pitchType);
   }
 
 
   pitchTypeChanged(newInputPitchType): void {
     console.log("----pitchTypeChanged");    
     this.inputTypePitch = newInputPitchType;
-    this.pitchType = this.inputTypePitch.type;
-    console.log(this.pitchType);
   }
 
 
