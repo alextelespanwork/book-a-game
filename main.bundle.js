@@ -758,7 +758,7 @@ var App = (function () {
     };
     App.prototype._loadImages = function () {
         // register some loaders
-        __WEBPACK_IMPORTED_MODULE_2__theme_services__["c" /* BaThemePreloader */].registerLoader(this._imageLoader.load('/assets/img/sky-bg.jpg'));
+        __WEBPACK_IMPORTED_MODULE_2__theme_services__["c" /* BaThemePreloader */].registerLoader(this._imageLoader.load('assets/img/sky-bg.jpg'));
     };
     return App;
 }());
