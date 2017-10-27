@@ -1,42 +1,42 @@
-<!-- <!doctype html>
-<html>
-  <head> -->
-    <!-- Using the ingenious GitHub Pages SPA hack from
-    http://www.backalleycoder.com/2016/05/13/sghpa-the-single-page-app-hack-for-github-pages/ -->
-    <!-- <script>
-      sessionStorage.redirect = location.href;
-    </script>
-    <meta http-equiv="refresh" content="0;URL='https://alextelespanwork.github.io/book-a-game/'"></meta>
-  </head>
-  <body>
-  </body>
-</html> -->
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-  <meta charset="utf-8" />
-
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>book-a-game</title>
+  <base href="/">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <!--<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+  <script src="assets/js/bootstrap.min.js"></script>-->
 
-  <script>
-    sessionStorage.redirect = location.href;
+ <!-- Github Pages hack to allow SPA refresh without receiving 404. -->
+ <script>
+    (function () {
+      // Retrieve the URL the user was trying to access when receiving the 404.
+      var redirect = sessionStorage.redirect;
+      // Remove the URL from sessionStorage.
+      delete sessionStorage.redirect;
+      // Check if we actually need to redirect.
+      if (redirect && redirect != location.href) {
+        // We need to redirect to the URL the user was trying to access.
+        history.replaceState(null, null, redirect);
+      }
+    })();
   </script>
+<!-- /Github Pages hack. -->
 
-  <!-- Immediately redirect to the base URL so we can use the SPA routing. -->
-  <meta http-equiv="refresh" content="0;URL='/'"></meta>
-</head>
+<link href="styles.a23c2f7aeeafbf5c2c80.bundle.css" rel="stylesheet"/></head>
 
 <body>
-<!-- IE required at least 512 bytes of data to show non-default 404. -->
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</body>    
-            
-             
-</body>
+  <app>
+  </app>
 
+  <div id="preloader">
+    <div></div>
+  </div>
+
+<script type="text/javascript" src="inline.8de767fab8a1125f3211.bundle.js"></script><script type="text/javascript" src="polyfills.609586191b02f626770f.bundle.js"></script><script type="text/javascript" src="scripts.c04937d4311983d6e018.bundle.js"></script><script type="text/javascript" src="vendor.14fe07094bbfba90d304.bundle.js"></script><script type="text/javascript" src="main.802bb55491b998faa2c0.bundle.js"></script></body>
 
 </html>
