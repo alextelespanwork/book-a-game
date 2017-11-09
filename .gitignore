@@ -5,6 +5,7 @@ dist/
 /tmp
 /out-tsc
 /docs/build
+_site/
 
 # dependencies
 node_modules/

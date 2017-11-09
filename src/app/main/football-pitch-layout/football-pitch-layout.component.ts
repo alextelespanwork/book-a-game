@@ -18,7 +18,7 @@ tenASide: boolean = false;
 elevenASide: boolean = false;
 
 ngOnInit(): void {      
-  this.pitchType = "Five a Side";
+  this.pitchType = "Eleven a Side";
   this.setPitchButtonsVisibility(this.pitchType);
 }
 

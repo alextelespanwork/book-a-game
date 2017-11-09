@@ -43,6 +43,9 @@ export class FootballPitchesComponent implements OnInit {
         //         map: map
         //     });
         // });
+
+        GoogleMapsLoader.KEY = 'AIzaSyDdPXItVvSFXPE35hB0-NyWecMnDsz5inM';
+
         GoogleMapsLoader.load((google) => {
             var geocoder = new google.maps.Geocoder();
             var address =  this.activePitch.address;
